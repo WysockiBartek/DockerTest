@@ -57,7 +57,7 @@ func setupRoutes() {
 		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
 	})
 
-	http.Handle("/list", http.StripPrefix("/list", http.FileServer(http.Dir("/app/file"))))
+	http.Handle("/list", http.StripPrefix("/list", http.FileServer(http.Dir("./file"))))
 
 	http.HandleFunc("/upload", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./upload.html")
