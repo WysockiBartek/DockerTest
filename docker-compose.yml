@@ -10,7 +10,7 @@ services:
     ports:
      - "8080:8080"
     volumes: 
-     - "/home/bartekwysocki/Documents/Workspace/DockerQuest/files:/app/files"
+     - "/home/frstr/go/doc/DockerTest/files:/app/file"
 
   testapp2:
     build:
@@ -22,7 +22,7 @@ services:
     ports:
        - "8081:8081"
     volumes: 
-     - "./files:/app/files"
+     - "/home/frstr/go/doc/DockerTest/files:/app/file"
 
 
 networks:

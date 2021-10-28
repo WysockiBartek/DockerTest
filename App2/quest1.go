@@ -29,7 +29,7 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 
 	// Create a temporary file within our temp-images directory that follows
 	// a particular naming pattern
-	tempFile, err := ioutil.TempFile("files", handler.Filename)
+	tempFile, err := ioutil.TempFile("file", handler.Filename)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -57,7 +57,7 @@ func setupRoutes() {
 		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
 	})
 
-	http.Handle("/list", http.StripPrefix("/list", http.FileServer(http.Dir("./files"))))
+	http.Handle("/list", http.StripPrefix("/list", http.FileServer(http.Dir("./file"))))
 
 	http.HandleFunc("/upload", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./upload.html")
