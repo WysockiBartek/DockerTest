@@ -64,12 +64,12 @@ func setupRoutes() {
 	})
 	http.HandleFunc("/uploading", uploadFile)
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8081", nil)
 }
 
 func main() {
 
-	fmt.Println("Running server on :8080")
+	fmt.Println("Running server on :8081")
 	//log.Fatal(http.ListenAndServe(":8080", nil))
 	setupRoutes()
 }

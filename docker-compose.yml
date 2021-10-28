@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.9"
 services:
   testapp1:
     build:
@@ -10,7 +10,7 @@ services:
     ports:
      - "8080:8080"
     volumes: 
-     - "/home/bartekwysocki/Documents/Workspace/DockerQuest/files:/app/files"
+     - "/home/bartekwysocki/Documents/Workspace/DockerQuest/files:/app/files:Z"
 
   testapp2:
     build:
@@ -22,8 +22,7 @@ services:
     ports:
        - "8081:8081"
     volumes: 
-     - "./files:/app/files"
-
+     - "/home/bartekwysocki/Documents/Workspace/DockerQuest/files:/app/files:z"
 
 networks:
   shared_network:
